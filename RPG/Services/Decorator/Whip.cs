@@ -12,6 +12,6 @@ public class Whip : CondimentDecorator
     }
     public override double Cost()
     {
-        return 0.1;
+        return beverage.Cost() + 0.1;
     }
 }

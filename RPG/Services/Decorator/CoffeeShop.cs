@@ -24,6 +24,19 @@ public class CoffeeShop
         beverage4 = new Mocha(beverage4);
         beverage4 = new Mocha(beverage4);
         beverage4 = new Whip(beverage4);
+        Console.WriteLine("Set Size: Tall");
+        beverage4.SetSize(Beverage.Size.TALL);
         Console.WriteLine($"{beverage4.GetDescription()} ${beverage4.Cost()}");
+        Console.WriteLine("Set Size: Grande");
+        beverage4.SetSize(Beverage.Size.GRANDE);
+        Console.WriteLine($"{beverage4.GetDescription()} ${beverage4.Cost()}");
+        Console.WriteLine("Set Size: Venti");
+        beverage4.SetSize(Beverage.Size.VENTI);
+        var curSize = beverage4.GetSize();
+        Console.WriteLine($"{beverage4.GetDescription()} ${beverage4.Cost()}");
+
+        Beverage beverage5 = new Expresso();
+        beverage5 = new Mocha(beverage5);
+        Console.WriteLine($"{beverage5.GetDescription()} ${beverage5.Cost()}");
     }
 }

@@ -12,6 +12,19 @@ public class Soy : CondimentDecorator
     }
     public override double Cost()
     {
-        return beverage.Cost() + 0.15;
+        var cost = beverage.Cost();
+        switch (GetSize())
+        {
+            case Size.TALL:
+                cost += 0.1;
+                break;
+            case Size.GRANDE:
+                cost += 0.15;
+                break;
+            case Size.VENTI:
+                cost += 0.2;
+                break;
+        }
+        return cost;
     }
 }
