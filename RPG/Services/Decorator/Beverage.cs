@@ -2,23 +2,20 @@ namespace RPG.Services.Decorator;
 
 public abstract class Beverage
 {
-    public string description = "Unknown Beverage";
-    private Size size = Size.TALL;
-    public void SetSize(Size size)
+    public virtual string Description { get; protected set; } = "Unknown Beverage";
+
+    protected SizeType Size { get; set; } = SizeType.TALL;
+    public virtual void SetSize(SizeType size)
     {
-        this.size = size;
+        Size = size;
     }
-    public Size GetSize()
+    public virtual SizeType GetSize()
     {
-        return size;
-    }
-    public string GetDescription()
-    {
-        return description;
+        return Size;
     }
     public abstract double Cost();
 
-    public enum Size
+    public enum SizeType
     {
         TALL,
         GRANDE,
