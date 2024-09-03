@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using RPG.Services.Characters;
 using RPG.Services.Decorator;
+using RPG.Services.Factory.Client;
+using RPG.Services.Factory.Factory;
 using RPG.Services.Observer;
 
 namespace RPG.Controllers;
@@ -57,6 +59,15 @@ public class WeatherForecastController : ControllerBase
     public ActionResult GetCoffee()
     {
         new CoffeeShop().GetSomeCoffee();
+        return Ok();
+    }
+    [HttpGet("order_pizza")]
+    public ActionResult OrderPizza()
+    {
+        var clamPizza = new PizzaStore(new SimplePizzaStore()).OrderPizza("clam");
+        Console.WriteLine(clamPizza.GetType());
+        var veggiePizza = new PizzaStore(new SimplePizzaStore()).OrderPizza("veggie");
+        Console.WriteLine(veggiePizza.GetType());
         return Ok();
     }
 }

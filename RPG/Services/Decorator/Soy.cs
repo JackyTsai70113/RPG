@@ -7,10 +7,7 @@ public class Soy : CondimentDecorator
     {
         this.beverage = beverage;
     }
-    public override string Description
-    {
-        get { return beverage.Description + ", Soy"; }
-    }
+    public override string Description => beverage.Description + ", Soy";
     public override void SetSize(SizeType size)
     {
         beverage.SetSize(size);

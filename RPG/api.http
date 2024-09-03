@@ -1,0 +1,3 @@
+curl -X 'GET' \
+    'https://localhost:7188/WeatherForecast/order_pizza' \
+    -H 'accept: */*'
