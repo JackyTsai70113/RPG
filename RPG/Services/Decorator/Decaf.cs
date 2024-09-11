@@ -1,13 +1,14 @@
-namespace RPG.Services.Decorator;
-
-public class Decaf : Beverage
+namespace RPG.Services.Decorator
 {
-    public Decaf()
+    public class Decaf : Beverage
     {
-        Description = "Decaf Coffee";
-    }
-    public override double Cost()
-    {
-        return 1.05;
+        public Decaf()
+        {
+            Description = "Decaf Coffee";
+        }
+        public override double Cost()
+        {
+            return 1.05;
+        }
     }
 }

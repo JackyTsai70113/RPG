@@ -1,23 +1,24 @@
 using RPG.Services.Behaviors;
 
-namespace RPG.Services.Characters;
-
-public abstract class Character
+namespace RPG.Services.Characters
 {
-    private IWeaponBehavior weapon;
-
-    public Character()
+    public abstract class Character
     {
-        weapon = new NoWeaponBehavior();
-    }
+        private IWeaponBehavior weapon;
 
-    public void SetWeapon(IWeaponBehavior w)
-    {
-        weapon = w;
-    }
+        public Character()
+        {
+            weapon = new NoWeaponBehavior();
+        }
 
-    public void Fight()
-    {
-        weapon.UseWeapon();
+        public void SetWeapon(IWeaponBehavior w)
+        {
+            weapon = w;
+        }
+
+        public void Fight()
+        {
+            weapon.UseWeapon();
+        }
     }
 }

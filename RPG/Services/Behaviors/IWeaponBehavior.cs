@@ -1,6 +1,7 @@
-namespace RPG.Services.Behaviors;
-
-public interface IWeaponBehavior
+namespace RPG.Services.Behaviors
 {
-    public void UseWeapon();
+    public interface IWeaponBehavior
+    {
+        public void UseWeapon();
+    }
 }

@@ -1,9 +1,10 @@
-namespace RPG.Services.Behaviors;
-
-public class AxeBehavior : IWeaponBehavior
+namespace RPG.Services.Behaviors
 {
-    public void UseWeapon()
+    public class AxeBehavior : IWeaponBehavior
     {
-        Console.WriteLine("use axe!");
+        public void UseWeapon()
+        {
+            Console.WriteLine("use axe!");
+        }
     }
 }

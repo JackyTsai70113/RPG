@@ -1,3 +1,6 @@
 curl -X 'GET' \
-    'https://localhost:7188/WeatherForecast/order_pizza' \
+    'https://localhost:7188/WeatherForecast/factory_method_order_pizza' \
+    -H 'accept: */*'
+curl -X 'GET' \
+    'https://localhost:7188/WeatherForecast/abstract_factory_order_pizza' \
     -H 'accept: */*'

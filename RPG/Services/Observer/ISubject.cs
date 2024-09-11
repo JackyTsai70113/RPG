@@ -1,8 +1,9 @@
-namespace RPG.Services.Observer;
-
-public interface ISubject
+namespace RPG.Services.Observer
 {
-    public void RegisterObserver(IObserver o);
-    public void RemoveObserver(IObserver o);
-    public void NotifyObservers();
+    public interface ISubject
+    {
+        public void RegisterObserver(IObserver o);
+        public void RemoveObserver(IObserver o);
+        public void NotifyObservers();
+    }
 }

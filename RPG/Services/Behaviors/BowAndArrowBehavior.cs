@@ -1,9 +1,10 @@
-namespace RPG.Services.Behaviors;
-
-public class BowAndArrowBehavior : IWeaponBehavior
+namespace RPG.Services.Behaviors
 {
-    public void UseWeapon()
+    public class BowAndArrowBehavior : IWeaponBehavior
     {
-        Console.WriteLine("use bow and arrow!");
+        public void UseWeapon()
+        {
+            Console.WriteLine("use bow and arrow!");
+        }
     }
 }

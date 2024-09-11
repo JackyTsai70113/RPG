@@ -1,6 +1,7 @@
-namespace RPG.Services.Observer;
-
-public interface IDisplayElement
+namespace RPG.Services.Observer
 {
-    public void Display();
+    public interface IDisplayElement
+    {
+        public void Display();
+    }
 }

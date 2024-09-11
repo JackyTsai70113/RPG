@@ -1,40 +1,41 @@
-namespace RPG.Services.Observer;
-
-public class ForecastDisplay : IObserver, IDisplayElement
+namespace RPG.Services.Observer
 {
-    private float currentPressure = 29.92f;
-    private float lastPressure;
-    private readonly WeatherData weatherData;
-    public ForecastDisplay(WeatherData weatherData)
+    public class ForecastDisplay : IObserver, IDisplayElement
     {
-        this.weatherData = weatherData;
-        weatherData.RegisterObserver(this);
-    }
-    public void Update(float temperature, float humidity, float pressure)
-    {
-        lastPressure = currentPressure;
-        currentPressure = pressure;
-        Display();
-    }
-    public void Display()
-    {
-        Console.Write("Forecast: ");
-        if (currentPressure > lastPressure)
+        private float currentPressure = 29.92f;
+        private float lastPressure;
+        private readonly WeatherData weatherData;
+        public ForecastDisplay(WeatherData weatherData)
         {
-            Console.WriteLine("Improving weather on the way!");
+            this.weatherData = weatherData;
+            weatherData.RegisterObserver(this);
         }
-        else if (currentPressure == lastPressure)
+        public void Update(float temperature, float humidity, float pressure)
         {
-            Console.WriteLine("More of the same");
+            lastPressure = currentPressure;
+            currentPressure = pressure;
+            Display();
         }
-        else if (currentPressure < lastPressure)
+        public void Display()
         {
-            Console.WriteLine("Watch out for cooler, rainy weather");
+            Console.Write("Forecast: ");
+            if (currentPressure > lastPressure)
+            {
+                Console.WriteLine("Improving weather on the way!");
+            }
+            else if (currentPressure == lastPressure)
+            {
+                Console.WriteLine("More of the same");
+            }
+            else if (currentPressure < lastPressure)
+            {
+                Console.WriteLine("Watch out for cooler, rainy weather");
+            }
         }
-    }
 
-    public void DoNotDisplay()
-    {
-        weatherData.RemoveObserver(this);
+        public void DoNotDisplay()
+        {
+            weatherData.RemoveObserver(this);
+        }
     }
 }

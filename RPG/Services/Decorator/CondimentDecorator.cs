@@ -1,6 +1,7 @@
-namespace RPG.Services.Decorator;
-
-public abstract class CondimentDecorator : Beverage
+namespace RPG.Services.Decorator
 {
-    public abstract override string Description { get; }
+    public abstract class CondimentDecorator : Beverage
+    {
+        public abstract override string Description { get; }
+    }
 }

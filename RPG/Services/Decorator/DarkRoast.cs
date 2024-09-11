@@ -1,13 +1,14 @@
-namespace RPG.Services.Decorator;
-
-public class DarkRoast : Beverage
+namespace RPG.Services.Decorator
 {
-    public DarkRoast()
+    public class DarkRoast : Beverage
     {
-        Description = "Dark Roast Coffee";
-    }
-    public override double Cost()
-    {
-        return 0.99;
+        public DarkRoast()
+        {
+            Description = "Dark Roast Coffee";
+        }
+        public override double Cost()
+        {
+            return 0.99;
+        }
     }
 }

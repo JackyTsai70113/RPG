@@ -1,13 +1,14 @@
-namespace RPG.Services.Decorator;
-
-public class HouseBlend : Beverage
+namespace RPG.Services.Decorator
 {
-    public HouseBlend()
+    public class HouseBlend : Beverage
     {
-        Description = "House Blend Coffee";
-    }
-    public override double Cost()
-    {
-        return 0.89;
+        public HouseBlend()
+        {
+            Description = "House Blend Coffee";
+        }
+        public override double Cost()
+        {
+            return 0.89;
+        }
     }
 }

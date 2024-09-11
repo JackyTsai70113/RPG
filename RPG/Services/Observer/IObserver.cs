@@ -1,6 +1,7 @@
-namespace RPG.Services.Observer;
-
-public interface IObserver
+namespace RPG.Services.Observer
 {
-    public void Update(float temp, float humidity, float pressure);
+    public interface IObserver
+    {
+        public void Update(float temp, float humidity, float pressure);
+    }
 }

@@ -1,9 +1,10 @@
-namespace RPG.Services.Behaviors;
-
-public class NoWeaponBehavior : IWeaponBehavior
+namespace RPG.Services.Behaviors
 {
-    public void UseWeapon()
+    public class NoWeaponBehavior : IWeaponBehavior
     {
-        Console.WriteLine("no weapon!");
+        public void UseWeapon()
+        {
+            Console.WriteLine("no weapon!");
+        }
     }
 }

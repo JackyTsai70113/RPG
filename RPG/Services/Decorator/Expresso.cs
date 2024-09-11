@@ -1,13 +1,14 @@
-namespace RPG.Services.Decorator;
-
-public class Expresso : Beverage
+namespace RPG.Services.Decorator
 {
-    public Expresso()
+    public class Expresso : Beverage
     {
-        Description = "Expresso";
-    }
-    public override double Cost()
-    {
-        return 1.99;
+        public Expresso()
+        {
+            Description = "Expresso";
+        }
+        public override double Cost()
+        {
+            return 1.99;
+        }
     }
 }

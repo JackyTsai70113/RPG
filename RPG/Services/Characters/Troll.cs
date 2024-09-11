@@ -1,5 +1,6 @@
-namespace RPG.Services.Characters;
-
-public class Troll : Character
+namespace RPG.Services.Characters
 {
+    public class Troll : Character
+    {
+    }
 }

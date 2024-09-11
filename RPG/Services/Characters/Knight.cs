@@ -1,5 +1,6 @@
-namespace RPG.Services.Characters;
-
-public class Knight : Character
+namespace RPG.Services.Characters
 {
+    public class Knight : Character
+    {
+    }
 }
