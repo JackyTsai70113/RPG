@@ -80,5 +80,20 @@ namespace RPG.Controllers
             Services.Factory.PizzaStoreAbstractFactory.Client.OrderPizza();
             return Ok();
         }
+
+        [HttpGet("show_animals")]
+        public ActionResult ShowAnimals()
+        {
+            Services.Adapter.Ducks.Client.ShowAnimals();
+            return Ok();
+        }
+
+        [HttpGet("operator_home_theater")]
+        public ActionResult OperatorHomeTheater()
+        {
+            Services.Facade.HomeTheater.Client.OperatorHomeTheater();
+            return Ok();
+        }
+
     }
 }

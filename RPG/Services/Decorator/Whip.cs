@@ -2,7 +2,7 @@ namespace RPG.Services.Decorator
 {
     public class Whip : CondimentDecorator
     {
-        private Beverage beverage;
+        private readonly Beverage beverage;
         public Whip(Beverage beverage)
         {
             this.beverage = beverage;
