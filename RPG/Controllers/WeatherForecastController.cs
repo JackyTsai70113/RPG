@@ -95,5 +95,32 @@ namespace RPG.Controllers
             return Ok();
         }
 
+        [HttpGet("order_beverage")]
+        public ActionResult OrderBeverage()
+        {
+            Services.TemplateMethod.Barista.Client.OrderBeverage();
+            return Ok();
+        }
+
+        [HttpGet("sort_ducks")]
+        public ActionResult SortDucks()
+        {
+            Services.TemplateMethod.DuckSort.Client.SortDucks();
+            return Ok();
+        }
+
+        [HttpGet("show_chocolate_boiler")]
+        public ActionResult ShowChocolateBoiler()
+        {
+            Services.Singleton.ChocolateBoiler.Client.ShowChocolateBoiler();
+            return Ok();
+        }
+
+        [HttpGet("show_cooler_and_hotter_singleton")]
+        public ActionResult ShowCoolerAndHotterSingleton()
+        {
+            Services.Singleton.MultipleSingleton.Client.ShowCoolerAndHotterSingleton();
+            return Ok();
+        }
     }
 }
