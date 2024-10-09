@@ -122,5 +122,14 @@ namespace RPG.Controllers
             Services.Singleton.MultipleSingleton.Client.ShowCoolerAndHotterSingleton();
             return Ok();
         }
+
+        [HttpGet("test")]
+        public IActionResult Test()
+        {
+            Services.Command.RemoteControlWithUndo.Client.RemoteControlTest();
+            Console.WriteLine();
+            Services.Command.RemoteControlWithUndo.Client.PartyTest();
+            return Ok();
+        }
     }
 }
