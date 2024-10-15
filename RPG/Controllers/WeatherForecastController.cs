@@ -123,12 +123,21 @@ namespace RPG.Controllers
             return Ok();
         }
 
-        [HttpGet("test")]
-        public IActionResult Test()
+        [HttpGet("command_test")]
+        public IActionResult CommandTest()
         {
             Services.Command.RemoteControlWithUndo.Client.RemoteControlTest();
             Console.WriteLine();
             Services.Command.RemoteControlWithUndo.Client.PartyTest();
+            return Ok();
+        }
+
+        [HttpGet("iterator_test")]
+        public IActionResult IteratorTest()
+        {
+            Services.Iterator.DinerMerger.Client.Test();
+            Console.WriteLine();
+            // Services.Command.RemoteControlWithUndo.Client.PartyTest();
             return Ok();
         }
     }
