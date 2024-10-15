@@ -19,11 +19,6 @@ public class CafeMenu : IMenu
         _menuItems.Add(menuItem.Name, menuItem);
     }
 
-    public Dictionary<string, MenuItem> GetItems()
-    {
-        return _menuItems;
-    }
-
     public IEnumerator<MenuItem> CreateIterator()
     {
         return _menuItems.Values.GetEnumerator();

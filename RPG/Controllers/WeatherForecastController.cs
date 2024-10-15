@@ -137,7 +137,7 @@ namespace RPG.Controllers
         {
             Services.Iterator.DinerMerger.Client.Test();
             Console.WriteLine();
-            // Services.Command.RemoteControlWithUndo.Client.PartyTest();
+            Services.Iterator.DinerMergerCafe.Client.Test();
             return Ok();
         }
     }

@@ -13,7 +13,7 @@ public class DinerMenuIterator : IEnumerator<MenuItem>
 
     public MenuItem Current => (MenuItem)_enumerator.Current;
 
-    object IEnumerator.Current => throw new NotImplementedException();
+    object IEnumerator.Current => _enumerator.Current;
 
     public void Dispose()
     {

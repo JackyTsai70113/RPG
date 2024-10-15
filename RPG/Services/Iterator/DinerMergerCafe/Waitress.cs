@@ -10,10 +10,10 @@ public class Waitress
     }
     public void PrintMenu()
     {
-        Console.WriteLine("MENU\n----\n");
+        Console.WriteLine("MENU\n----");
         foreach (var menu in menus)
         {
-            Console.WriteLine(menu.GetName());
+            Console.WriteLine($"\n{menu.GetName()}");
             PrintMenu(menu.CreateIterator());
         }
     }

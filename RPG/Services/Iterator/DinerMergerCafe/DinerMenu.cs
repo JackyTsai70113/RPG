@@ -29,12 +29,6 @@ public class DinerMenu : IMenu
         menuItems[_numberOfItems++] = new MenuItem(name, description, vegetarian, price);
     }
 
-    // 不需要，這方法公開了內部實作
-    public MenuItem[] GetMenuItems()
-    {
-        return menuItems;
-    }
-
     public IEnumerator<MenuItem> CreateIterator()
     {
         return new DinerMenuIterator(menuItems);

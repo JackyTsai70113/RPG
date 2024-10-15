@@ -20,17 +20,12 @@ public class PancakeHouseMenu : IMenu
         menuItems.Add(new MenuItem(name, description, vegetarian, price));
     }
 
-    public List<MenuItem> GetMenuItems()
-    {
-        return menuItems;
-    }
-
     public IEnumerator<MenuItem> CreateIterator()
     {
         IEnumerable<int> ss = new List<int>();
         var dd = ss.GetEnumerator();
         return menuItems.GetEnumerator();
-    }`
+    }
 
     public string GetName() => name;
 }
