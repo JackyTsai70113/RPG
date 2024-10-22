@@ -29,3 +29,23 @@ public class DinerMenuIterator : IEnumerator<MenuItem>
         _enumerator.Reset();
     }
 }
+
+public class DinerMenuIterator2 : IEnumerable<MenuItem>
+{
+    private readonly IEnumerator _enumerator;
+
+    public DinerMenuIterator2(MenuItem[] menuItems)
+    {
+        _enumerator = menuItems.GetEnumerator();
+    }
+
+    public IEnumerator<MenuItem> GetEnumerator()
+    {
+        throw new NotImplementedException();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        throw new NotImplementedException();
+    }
+}

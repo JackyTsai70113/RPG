@@ -140,5 +140,14 @@ namespace RPG.Controllers
             Services.Iterator.DinerMergerCafe.Client.Test();
             return Ok();
         }
+
+        [HttpGet("state_test")]
+        public IActionResult StateTest()
+        {
+            Services.State.Gumball.Client.Test();
+            Console.WriteLine();
+            // Services.Command.RemoteControlWithUndo.Client.PartyTest();
+            return Ok();
+        }
     }
 }
