@@ -155,7 +155,7 @@ namespace RPG.Controllers
         {
             Services.State.Gumball.Client.Test();
             Console.WriteLine();
-            // Services.Command.RemoteControlWithUndo.Client.PartyTest();
+            Services.State.GumballState.Client.Test();
             return Ok();
         }
     }
