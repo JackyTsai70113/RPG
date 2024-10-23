@@ -7,12 +7,12 @@ public abstract class Pizza
 {
     public string Name { get; set; } = "Unknown Name";
 
-    public IDough? Dough { get; protected set; }
-    public ISauce? Sauce { get; protected set; }
+    public IDough Dough { get; protected set; }
+    public ISauce Sauce { get; protected set; }
     public IVeggie[] Veggies { get; protected set; } = Array.Empty<IVeggie>();
-    public ICheese? Cheese { get; protected set; }
-    public IPepperoni? Pepperoni { get; protected set; }
-    public IClam? Clam { get; protected set; }
+    public ICheese Cheese { get; protected set; }
+    public IPepperoni Pepperoni { get; protected set; }
+    public IClam Clam { get; protected set; }
 
     public abstract void Prepare();
 

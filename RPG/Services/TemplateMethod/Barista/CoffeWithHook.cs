@@ -20,7 +20,7 @@ public class CoffeeWithHook : CaffeineBeverageWithHook
 
     private static string GetUserInput()
     {
-        string? answer = null;
+        string answer = null;
         Console.WriteLine("Would you like milk and sugar with your coffee (y/n)? ");
 
         answer = Console.ReadLine();

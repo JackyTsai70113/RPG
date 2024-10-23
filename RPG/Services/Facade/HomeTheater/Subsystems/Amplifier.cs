@@ -7,9 +7,9 @@ public class Amplifier
     {
         this.description = description;
     }
-    public Tuner? Tuner { get; private set; }
-    public DvdPlayer? Dvd { get; private set; }
-    public CdPlayer? Cd { get; private set; }
+    public Tuner Tuner { get; private set; }
+    public DvdPlayer Dvd { get; private set; }
+    public CdPlayer Cd { get; private set; }
 
     public void On()
     {

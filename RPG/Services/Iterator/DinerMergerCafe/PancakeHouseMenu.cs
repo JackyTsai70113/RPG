@@ -3,11 +3,11 @@ namespace RPG.Services.Iterator.DinerMergerCafe;
 public class PancakeHouseMenu : IMenu
 {
     private readonly string name = "BREAKFAST";
-    readonly List<MenuItem> menuItems;
+    readonly List<MenuItem> _menuItems;
 
     public PancakeHouseMenu()
     {
-        menuItems = new();
+        _menuItems = new();
 
         AddItem("K&B's Pancake Breakfast", "Pancakes with scrambled eggs, and toast", true, 2.99m);
         AddItem("Regular Pancake Breakfast", "Pancakes with fried eggs, sausage", false, 2.99m);
@@ -17,14 +17,12 @@ public class PancakeHouseMenu : IMenu
 
     public void AddItem(string name, string description, bool vegetarian, decimal price)
     {
-        menuItems.Add(new MenuItem(name, description, vegetarian, price));
+        _menuItems.Add(new MenuItem(name, description, vegetarian, price));
     }
 
     public IEnumerator<MenuItem> CreateIterator()
     {
-        IEnumerable<int> ss = new List<int>();
-        var dd = ss.GetEnumerator();
-        return menuItems.GetEnumerator();
+        return _menuItems.GetEnumerator();
     }
 
     public string GetName() => name;

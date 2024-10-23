@@ -2,23 +2,25 @@ namespace RPG.Services.Iterator.DinerMerger;
 
 public class Waitress
 {
-    private readonly PancakeHouseMenu pancakeHouseMenu;
-    private readonly DinerMenu dinerMenu;
+    private readonly IMenu _pancakeHouseMenu;
+    private readonly IMenu _dinerMenu;
 
-    public Waitress(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu)
+    public Waitress(IMenu pancakeHouseMenu, IMenu dinerMenu)
     {
-        this.pancakeHouseMenu = pancakeHouseMenu;
-        this.dinerMenu = dinerMenu;
+        _pancakeHouseMenu = pancakeHouseMenu;
+        _dinerMenu = dinerMenu;
     }
     public void PrintMenu()
     {
-        PrintMenu(pancakeHouseMenu.CreateIterator());
-        PrintMenu(dinerMenu.CreateIterator());
+        Console.WriteLine("MENU\n----\nBREAKFAST");
+        PrintMenu(_pancakeHouseMenu.CreateIterator());
+        Console.WriteLine("\nLUNCH");
+        PrintMenu(_dinerMenu.CreateIterator());
     }
 
     public void PrintBreakfastMenu()
     {
-        var pancakeHouseMenuIterator = pancakeHouseMenu.CreateIterator();
+        var pancakeHouseMenuIterator = _pancakeHouseMenu.CreateIterator();
         while (pancakeHouseMenuIterator.HasNext())
         {
             Console.WriteLine(pancakeHouseMenuIterator.Next());
@@ -26,7 +28,7 @@ public class Waitress
     }
     public void PrintLunchMenu()
     {
-        var dinerMenuIterator = dinerMenu.CreateIterator();
+        var dinerMenuIterator = _dinerMenu.CreateIterator();
         while (dinerMenuIterator.HasNext())
         {
             Console.WriteLine(dinerMenuIterator.Next());
@@ -34,8 +36,8 @@ public class Waitress
     }
     public void PrintVegetarianMenu()
     {
-        PrintVegetarianMenu(pancakeHouseMenu.CreateIterator());
-        PrintVegetarianMenu(dinerMenu.CreateIterator());
+        PrintVegetarianMenu(_pancakeHouseMenu.CreateIterator());
+        PrintVegetarianMenu(_dinerMenu.CreateIterator());
     }
     private static void PrintMenu(IIterator<MenuItem> iterator)
     {

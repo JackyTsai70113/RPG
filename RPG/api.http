@@ -1,7 +1,3 @@
-# curl -X 'GET' \
-#     'https://localhost:7188/WeatherForecast/factory_method_order_pizza' \
-#     -H 'accept: */*'
-
 curl -X 'GET' \
-    'https://localhost:7188/WeatherForecast/iterator_test' \
+    'https://localhost:7188/WeatherForecast/composite_test' \
     -H 'accept: */*'

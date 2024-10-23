@@ -4,9 +4,9 @@ namespace RPG.Services.Factory.PizzaStoreFactoryMethod.FactoryMethods;
 
 public class ChicagoPizzaStore : PizzaStore
 {
-    protected override Pizza? CreatePizza(IngredientType type)
+    protected override Pizza CreatePizza(IngredientType type)
     {
-        Pizza? pizza = type switch
+        Pizza pizza = type switch
         {
             IngredientType.Cheese => new ChicagoStyleCheesePizza(),
             IngredientType.Clam => new ChicagoStyleClamPizza(),

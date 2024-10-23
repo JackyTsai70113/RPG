@@ -2,29 +2,32 @@ namespace RPG.Services.Iterator.DinerMergerCafe;
 
 public class Waitress
 {
-    private readonly IMenu[] menus;
+    private readonly IMenu _pancakeHouseMenu;
+    private readonly IMenu _dinerMenu;
+    private readonly IMenu _cafeMenu;
 
-    public Waitress(IMenu[] menus)
+    public Waitress(IMenu pancakeHouseMenu, IMenu dinerMenu, IMenu cafeMenu)
     {
-        this.menus = menus;
+        _pancakeHouseMenu = pancakeHouseMenu;
+        _dinerMenu = dinerMenu;
+        _cafeMenu = cafeMenu;
     }
     public void PrintMenu()
     {
-        Console.WriteLine("MENU\n----");
-        foreach (var menu in menus)
-        {
-            Console.WriteLine($"\n{menu.GetName()}");
-            PrintMenu(menu.CreateIterator());
-        }
+        Console.WriteLine("MENU\n----\nBREAKFAST");
+        PrintMenu(_pancakeHouseMenu.CreateIterator());
+        Console.WriteLine("\nLUNCH");
+        PrintMenu(_dinerMenu.CreateIterator());
+        Console.WriteLine("\nDINNER");
+        PrintMenu(_cafeMenu.CreateIterator());
     }
 
     public void PrintVegetarianMenu()
     {
-        Console.WriteLine("\nVEGETARIAN MENU\n");
-        foreach (var menu in menus)
-        {
-            PrintVegetarianMenu(menu.CreateIterator());
-        }
+        Console.WriteLine("\nVEGETARIAN MENU\n---------------");
+        PrintVegetarianMenu(_pancakeHouseMenu.CreateIterator());
+        PrintVegetarianMenu(_dinerMenu.CreateIterator());
+        PrintVegetarianMenu(_cafeMenu.CreateIterator());
     }
     private static void PrintMenu(IEnumerator<MenuItem> iterator)
     {

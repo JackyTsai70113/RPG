@@ -2,7 +2,7 @@ namespace RPG.Services.Singleton.MultipleSingleton.Singletons;
 
 public class ThreadSafeSingleton
 {
-    private static volatile ThreadSafeSingleton? _uniqueInstance;
+    private static volatile ThreadSafeSingleton _uniqueInstance;
     private static object _syncLock = new();
     private ThreadSafeSingleton() { }
 

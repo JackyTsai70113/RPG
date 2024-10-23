@@ -1,6 +1,6 @@
 namespace RPG.Services.Iterator.DinerMerger;
 
-public class DinerMenu
+public class DinerMenu : IMenu
 {
     private const int MAX_ITEMS = 6;
     private int _numberOfItems;

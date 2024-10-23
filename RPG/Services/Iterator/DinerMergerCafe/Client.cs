@@ -7,7 +7,7 @@ public static class Client
         IMenu pancakeHouseMenu = new PancakeHouseMenu();
         IMenu dinerMenu = new DinerMenu();
         IMenu cafeMenu = new CafeMenu();
-        Waitress waitress = new(new[] { pancakeHouseMenu, dinerMenu, cafeMenu });
+        Waitress waitress = new(pancakeHouseMenu, dinerMenu, cafeMenu);
         waitress.PrintMenu();
     }
 }

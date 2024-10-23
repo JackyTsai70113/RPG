@@ -1,6 +1,6 @@
 namespace RPG.Services.Iterator.DinerMerger;
 
-public class PancakeHouseMenu
+public class PancakeHouseMenu : IMenu
 {
     readonly List<MenuItem> menuItems;
 

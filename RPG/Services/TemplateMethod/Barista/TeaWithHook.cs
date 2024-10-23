@@ -20,7 +20,7 @@ public class TeaWithHook : CaffeineBeverageWithHook
 
     private static string GetUserInput()
     {
-        string? answer = null;
+        string answer = null;
         Console.WriteLine("Would you like lemon with your tea (y/n)? ");
 
         answer = Console.ReadLine();

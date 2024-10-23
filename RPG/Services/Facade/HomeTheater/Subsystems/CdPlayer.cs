@@ -4,7 +4,7 @@ public class CdPlayer
 {
     private readonly string description;
     private readonly Amplifier amplifier;
-    private string? title;
+    private string title;
     private int? currentTrack;
 
     public CdPlayer(string description, Amplifier amplifier)

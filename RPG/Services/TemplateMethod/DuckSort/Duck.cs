@@ -16,7 +16,7 @@ public class Duck : IComparable<Duck>
         return $"{_name} weights {_weight}";
     }
 
-    public int CompareTo(Duck? other)
+    public int CompareTo(Duck other)
     {
         if (other == null)
         {

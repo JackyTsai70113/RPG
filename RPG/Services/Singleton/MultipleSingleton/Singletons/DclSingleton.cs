@@ -2,7 +2,7 @@ namespace RPG.Services.Singleton.MultipleSingleton.Singletons;
 
 public class DclSingleton
 {
-    private static volatile DclSingleton? _uniqueInstance;
+    private static volatile DclSingleton _uniqueInstance;
     private static object _syncLock = new();
     private DclSingleton() { }
 

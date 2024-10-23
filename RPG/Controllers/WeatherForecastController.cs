@@ -141,6 +141,15 @@ namespace RPG.Controllers
             return Ok();
         }
 
+        [HttpGet("composite_test")]
+        public IActionResult CompositeTest()
+        {
+            Services.Composite.Menu.Client.Test();
+            Console.WriteLine("=====");
+            Services.Composite.MenuIterator.Client.Test();
+            return Ok();
+        }
+
         [HttpGet("state_test")]
         public IActionResult StateTest()
         {

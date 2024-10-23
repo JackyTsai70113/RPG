@@ -11,9 +11,9 @@ public class PizzaStore
     {
         _factory = factory;
     }
-    public Pizza? OrderPizza(IngredientType type)
+    public Pizza OrderPizza(IngredientType type)
     {
-        Pizza? pizza = _factory.CreatePizza(type);
+        Pizza pizza = _factory.CreatePizza(type);
         if (pizza == null) return null;
         pizza.Prepare();
         pizza.Bake();

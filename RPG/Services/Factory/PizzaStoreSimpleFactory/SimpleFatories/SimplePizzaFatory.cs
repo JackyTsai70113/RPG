@@ -4,7 +4,7 @@ namespace RPG.Services.Factory.PizzaStoreSimpleFactory.SimpleFatories;
 
 public class SimplePizzaFactory
 {
-    public Pizza? CreatePizza(IngredientType type)
+    public Pizza CreatePizza(IngredientType type)
     {
         Pizza pizza;
         switch (type)

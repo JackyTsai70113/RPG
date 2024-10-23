@@ -10,13 +10,13 @@ public static class Client
         SimplePizzaFactory factory = new();
         PizzaStore store = new(factory);
 
-        Pizza? cheesePizza = store.OrderPizza(IngredientType.Cheese);
+        Pizza cheesePizza = store.OrderPizza(IngredientType.Cheese);
         if (cheesePizza != null)
         {
             Console.WriteLine("We ordered a " + cheesePizza.Name);
         }
 
-        Pizza? veggiePizza = store.OrderPizza(IngredientType.Veggie);
+        Pizza veggiePizza = store.OrderPizza(IngredientType.Veggie);
         if (veggiePizza != null)
         {
             Console.WriteLine("We ordered a " + veggiePizza.Name);

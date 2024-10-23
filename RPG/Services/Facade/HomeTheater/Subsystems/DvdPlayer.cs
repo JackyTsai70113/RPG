@@ -4,7 +4,7 @@ public class DvdPlayer
 {
     private readonly string description;
     private readonly Amplifier amplifier;
-    private string? _movie;
+    private string _movie;
     private int _currentTrack;
 
     public DvdPlayer(string description, Amplifier amplifier)

@@ -11,13 +11,13 @@ public static class Client
         PizzaStore nyStore = new NYPizzaStore();
         PizzaStore chicagoStore = new ChicagoPizzaStore();
 
-        Pizza? nyCheesePizza = nyStore.OrderPizza(IngredientType.Cheese);
+        Pizza nyCheesePizza = nyStore.OrderPizza(IngredientType.Cheese);
         if (nyCheesePizza != null)
         {
             Console.WriteLine("Ethan ordered a\n" + nyCheesePizza.ToString());
         }
 
-        Pizza? chicagoCheesePizza = chicagoStore.OrderPizza(IngredientType.Cheese);
+        Pizza chicagoCheesePizza = chicagoStore.OrderPizza(IngredientType.Cheese);
         if (chicagoCheesePizza != null)
         {
             Console.WriteLine("Joel ordered a\n" + chicagoCheesePizza.ToString());

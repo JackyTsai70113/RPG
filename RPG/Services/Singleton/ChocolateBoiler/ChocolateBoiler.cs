@@ -5,7 +5,7 @@ public class ChocolateBoiler
     private bool _empty;
     private bool _boiled;
 
-    private static ChocolateBoiler? _uniqueInstance;
+    private static ChocolateBoiler _uniqueInstance;
     private ChocolateBoiler()
     {
         _empty = true;
