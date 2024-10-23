@@ -8,7 +8,6 @@ public class Menu : MenuComponent
     {
         Name = name;
         Description = description;
-        _iterator = new CompositeIterator(_menuComponents.GetEnumerator());
     }
 
     public override string Name { get; }

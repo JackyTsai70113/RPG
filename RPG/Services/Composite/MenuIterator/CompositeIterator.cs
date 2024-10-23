@@ -4,13 +4,17 @@ namespace RPG.Services.Composite.MenuIterator;
 
 public class CompositeIterator : IEnumerator<MenuComponent>
 {
+    private readonly IEnumerator<MenuComponent> _iterator;
+    private readonly Stack<IEnumerator<MenuComponent>> _stack = new Stack<IEnumerator<MenuComponent>>();
+    private MenuComponent _current;
     public CompositeIterator(IEnumerator<MenuComponent> iterator)
     {
-        
+        _iterator = iterator;
+        _stack.Push(iterator);
     }
-    public MenuComponent Current => throw new NotImplementedException();
+    public MenuComponent Current => _current;
 
-    object IEnumerator.Current => throw new NotImplementedException();
+    object IEnumerator.Current => Current;
 
     public void Dispose()
     {
@@ -18,11 +22,33 @@ public class CompositeIterator : IEnumerator<MenuComponent>
 
     public bool MoveNext()
     {
-        throw new NotImplementedException();
+        if (!_stack.Any())
+        {
+            _current = null;
+            return false;
+        }
+
+        var iterator = _stack.Peek();
+        if (!iterator.MoveNext())
+        {
+            _stack.Pop();
+            return MoveNext();
+        }
+
+        _current = iterator.Current;
+
+        if (_current is Menu)
+        {
+            _stack.Push(_current.CreateIterator());
+        }
+
+        return true;
     }
 
     public void Reset()
     {
-        throw new NotImplementedException();
+        _current = null;
+        _stack.Clear();
+        _stack.Push(_iterator);
     }
 }

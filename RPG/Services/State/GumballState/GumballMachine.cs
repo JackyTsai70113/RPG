@@ -11,6 +11,7 @@ public class GumballMachine
         NoQuarterState = new NoQuarterState(this);
         HasQuarterState = new HasQuarterState(this);
         SoldState = new SoldState(this);
+        WinnerState = new WinnerState(this);
 
         Count = numberGumballs;
 
@@ -22,6 +23,7 @@ public class GumballMachine
     public IState NoQuarterState { get; }
     public IState HasQuarterState { get; }
     public IState SoldState { get; }
+    public IState WinnerState { get; }
 
     public void InsertQuarter()
     {
@@ -33,8 +35,8 @@ public class GumballMachine
     }
     public void TurnCrank()
     {
-        _state.TurnCrank();
-        if (_state == SoldState)
+        var turnedCrank = _state.TurnCrank();
+        if (turnedCrank)
         {
             _state.Dispense();
         }

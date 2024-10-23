@@ -1,10 +1,10 @@
 namespace RPG.Services.State.GumballState.States;
 
-public class SoldState : IState
+public class WinnerState : IState
 {
     private readonly GumballMachine _gumballMachine;
 
-    public SoldState(GumballMachine gumballMachine)
+    public WinnerState(GumballMachine gumballMachine)
     {
         _gumballMachine = gumballMachine;
     }
@@ -24,14 +24,22 @@ public class SoldState : IState
     public void Dispense()
     {
         _gumballMachine.ReleaseBall();
-        if (_gumballMachine.Count > 0)
+        if (_gumballMachine.Count == 0)
         {
-            _gumballMachine.SetState(_gumballMachine.NoQuarterState);
+            _gumballMachine.SetState(_gumballMachine.SoldOutState);
         }
         else
         {
-            Console.WriteLine("Oops, out of gumballs!");
-            _gumballMachine.SetState(_gumballMachine.SoldOutState);
+            _gumballMachine.ReleaseBall();
+            Console.WriteLine("YOU'RE A WINNER! Your got two gumballs for your quarter");
+            if (_gumballMachine.Count == 0)
+            {
+                _gumballMachine.SetState(_gumballMachine.SoldOutState);
+            }
+            else
+            {
+                _gumballMachine.SetState(_gumballMachine.NoQuarterState);
+            }
         }
     }
     public void Refill() { }

@@ -2,10 +2,12 @@ namespace RPG.Services.State.GumballState.States;
 
 public class HasQuarterState : IState
 {
+    private readonly Random _random;
     private readonly GumballMachine _gumballMachine;
 
     public HasQuarterState(GumballMachine gumballMachine)
     {
+        _random = new();
         _gumballMachine = gumballMachine;
     }
     public void InsertQuarter()
@@ -17,10 +19,19 @@ public class HasQuarterState : IState
         Console.WriteLine("Quarter returned");
         _gumballMachine.SetState(_gumballMachine.NoQuarterState);
     }
-    public void TurnCrank()
+    public bool TurnCrank()
     {
         Console.WriteLine("You turned...");
-        _gumballMachine.SetState(_gumballMachine.SoldState);
+        int winner = _random.Next(10);
+        if (winner == 0 && _gumballMachine.Count > 1)
+        {
+            _gumballMachine.SetState(_gumballMachine.WinnerState);
+        }
+        else
+        {
+            _gumballMachine.SetState(_gumballMachine.SoldState);
+        }
+        return true;
     }
     public void Dispense()
     {

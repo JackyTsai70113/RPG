@@ -1,3 +1,3 @@
 curl -X 'GET' \
-    'https://localhost:7188/WeatherForecast/composite_test' \
+    'https://localhost:7188/WeatherForecast/state_test' \
     -H 'accept: */*'

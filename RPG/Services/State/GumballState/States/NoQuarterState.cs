@@ -17,9 +17,10 @@ public class NoQuarterState : IState
     {
         Console.WriteLine("you haven't inserted a quarter");
     }
-    public void TurnCrank()
+    public bool TurnCrank()
     {
         Console.WriteLine("You turned but there's no quarter");
+        return false;
     }
     public void Dispense()
     {

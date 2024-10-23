@@ -4,12 +4,14 @@ public static class Client
 {
     public static void Test()
     {
-        GumballMachine gumballMachine = new(2);
+        GumballMachine gumballMachine = new GumballMachine(100);
 
         Console.WriteLine(gumballMachine);
 
         gumballMachine.InsertQuarter();
         gumballMachine.TurnCrank();
+        gumballMachine.InsertQuarter();
+        gumballMachine.TurnCrank();
 
         Console.WriteLine(gumballMachine);
 
@@ -18,7 +20,24 @@ public static class Client
         gumballMachine.InsertQuarter();
         gumballMachine.TurnCrank();
 
-        gumballMachine.Refill(5);
+        Console.WriteLine(gumballMachine);
+
+        gumballMachine.InsertQuarter();
+        gumballMachine.TurnCrank();
+        gumballMachine.InsertQuarter();
+        gumballMachine.TurnCrank();
+
+        Console.WriteLine(gumballMachine);
+
+        gumballMachine.InsertQuarter();
+        gumballMachine.TurnCrank();
+        gumballMachine.InsertQuarter();
+        gumballMachine.TurnCrank();
+
+        Console.WriteLine(gumballMachine);
+
+        gumballMachine.InsertQuarter();
+        gumballMachine.TurnCrank();
         gumballMachine.InsertQuarter();
         gumballMachine.TurnCrank();
 
