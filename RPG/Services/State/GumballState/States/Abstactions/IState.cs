@@ -13,7 +13,7 @@ public interface IState
     /// <summary>
     /// 轉動旋鈕
     /// </summary>
-    public bool TurnCrank();
+    public void TurnCrank();
     /// <summary>
     /// 投放糖果，供機器呼叫
     /// </summary>

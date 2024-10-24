@@ -16,10 +16,9 @@ public class SoldState : IState
     {
         Console.WriteLine("Sorry, you already turned the crank");
     }
-    public bool TurnCrank()
+    public void TurnCrank()
     {
         Console.WriteLine("Turning twice doesn't get you another gumball!");
-        return false;
     }
     public void Dispense()
     {

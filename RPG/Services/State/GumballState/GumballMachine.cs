@@ -35,12 +35,15 @@ public class GumballMachine
     }
     public void TurnCrank()
     {
-        var turnedCrank = _state.TurnCrank();
-        if (turnedCrank)
-        {
-            _state.Dispense();
-        }
+        _state.TurnCrank();
     }
+    public void Dispense()
+    {
+        _state.Dispense();
+    }
+    /// <summary>
+    /// 投放糖果
+    /// </summary>
     public void ReleaseBall()
     {
         Console.WriteLine("A gumball comes rolling out the slot");

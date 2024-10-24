@@ -16,10 +16,9 @@ public class SoldOutState : IState
     {
         Console.WriteLine("You can't eject,you haven't inserted a quarter yet");
     }
-    public bool TurnCrank()
+    public void TurnCrank()
     {
         Console.WriteLine("You turned, but there are no gumballs");
-        return false;
     }
     public void Dispense()
     {

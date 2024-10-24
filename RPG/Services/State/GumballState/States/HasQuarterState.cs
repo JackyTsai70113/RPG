@@ -19,7 +19,7 @@ public class HasQuarterState : IState
         Console.WriteLine("Quarter returned");
         _gumballMachine.SetState(_gumballMachine.NoQuarterState);
     }
-    public bool TurnCrank()
+    public void TurnCrank()
     {
         Console.WriteLine("You turned...");
         int winner = _random.Next(10);
@@ -31,7 +31,7 @@ public class HasQuarterState : IState
         {
             _gumballMachine.SetState(_gumballMachine.SoldState);
         }
-        return true;
+        _gumballMachine.Dispense();
     }
     public void Dispense()
     {
