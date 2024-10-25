@@ -5,6 +5,7 @@ namespace RPG.Services.State.GumballState;
 
 public class GumballMachine
 {
+    private IState _state;
     public GumballMachine(int numberGumballs)
     {
         SoldOutState = new SoldOutState(this);
@@ -17,13 +18,12 @@ public class GumballMachine
 
         _state = numberGumballs > 0 ? NoQuarterState : SoldOutState;
     }
-    public int Count { get; private set; }
-    public IState _state { get; private set; }
-    public IState SoldOutState { get; }
-    public IState NoQuarterState { get; }
-    public IState HasQuarterState { get; }
-    public IState SoldState { get; }
-    public IState WinnerState { get; }
+    internal int Count { get; private set; }
+    internal IState SoldOutState { get; }
+    internal IState NoQuarterState { get; }
+    internal IState HasQuarterState { get; }
+    internal IState SoldState { get; }
+    internal IState WinnerState { get; }
 
     public void InsertQuarter()
     {
@@ -44,7 +44,7 @@ public class GumballMachine
     /// <summary>
     /// 投放糖果
     /// </summary>
-    public void ReleaseBall()
+    internal void ReleaseBall()
     {
         Console.WriteLine("A gumball comes rolling out the slot");
         if (Count != 0)
@@ -59,7 +59,7 @@ public class GumballMachine
         _state.Refill();
     }
 
-    public void SetState(IState state)
+    internal void SetState(IState state)
     {
         _state = state;
     }

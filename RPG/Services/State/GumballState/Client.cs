@@ -4,7 +4,9 @@ public static class Client
 {
     public static void Test()
     {
-        GumballMachine gumballMachine = new GumballMachine(100);
+        GumballMachine gumballMachine = new(100);
+        var state = gumballMachine.NoQuarterState;
+        state.InsertQuarter();
 
         Console.WriteLine(gumballMachine);
 
